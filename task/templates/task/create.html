@@ -1,0 +1,15 @@
+{% extends 'task/base.html' %}
+
+{%block content%}
+   <div>
+      <form method="POST" class="mt-5 " >
+          {% csrf_token %}
+          <div class="mb-3">
+            {{ form }}
+          </div>
+          <button type="submit" class="btn btn-primary mt-4" >SAVE TODO</button>
+          <small>Edited: {{task.date_updated | date:"b d"}}</small>
+        </form>
+    </div>
+
+{%endblock content%}
